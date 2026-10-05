@@ -1,0 +1,58 @@
+COMPARISON OF SEARCHING METHODS
+================================
+
+The department names are stored in sorted order:
+
+Backend
+CEO
+Development
+Finance
+Frontend
+HR
+IT
+Testing
+
+
+SEARCH COMPARISON
+-----------------
+
+Department    Linear Search    Binary Search    Better Method
+IT            7 comparisons    3 comparisons    Binary Search
+Frontend      5 comparisons    3 comparisons    Binary Search
+Testing       8 comparisons    4 comparisons    Binary Search
+
+
+ANALYSIS
+--------
+
+1. Linear Search checks the department names sequentially from
+   the beginning of the array.
+
+2. Binary Search works only on the sorted array and repeatedly
+   divides the search range into smaller parts.
+
+3. For IT, Linear Search required 7 comparisons while Binary
+   Search required only 3 comparisons.
+
+4. For Frontend, Linear Search required 5 comparisons while
+   Binary Search required 3 comparisons.
+
+5. For Testing, Linear Search required 8 comparisons while
+   Binary Search required 4 comparisons.
+
+6. Binary Search required fewer comparisons in all three
+   test cases.
+
+
+CONCLUSION
+----------
+
+Binary Search is more efficient than Linear Search for locating
+departments when the department names are maintained in sorted
+order.
+
+Linear Search is simpler and does not require sorted data, but
+its worst-case time complexity is O(n).
+
+Binary Search has a worst-case time complexity of O(log n),
+making it more suitable for efficient department searching.

@@ -1,0 +1,97 @@
+TRACE TABLES
+============
+
+1. LEVEL-ORDER TRAVERSAL
+
+Step | Removed Node | Children Added       | Output
+-----|--------------|----------------------|----------------------------
+1    | CEO          | HR, Finance, IT      | CEO
+2    | HR           | None                 | CEO HR
+3    | Finance      | None                 | CEO HR Finance
+4    | IT           | Development, Testing | CEO HR Finance IT
+5    | Development  | Frontend, Backend    | CEO HR Finance IT Development
+6    | Testing      | None                 | CEO HR Finance IT Development Testing
+7    | Frontend     | None                 | CEO HR Finance IT Development Testing Frontend
+8    | Backend      | None                 | CEO HR Finance IT Development Testing Frontend Backend
+
+
+2. LINEAR SEARCH
+
+Search: IT
+
+Comparison | Element Checked | Result
+-----------|-----------------|--------
+1          | Backend         | Not Found
+2          | CEO             | Not Found
+3          | Development     | Not Found
+4          | Finance         | Not Found
+5          | Frontend        | Not Found
+6          | HR              | Not Found
+7          | IT              | Found
+
+Total comparisons: 7
+
+
+Search: Frontend
+
+Comparison | Element Checked | Result
+-----------|-----------------|--------
+1          | Backend         | Not Found
+2          | CEO             | Not Found
+3          | Development     | Not Found
+4          | Finance         | Not Found
+5          | Frontend        | Found
+
+Total comparisons: 5
+
+
+Search: Testing
+
+Comparison | Element Checked | Result
+-----------|-----------------|--------
+1          | Backend         | Not Found
+2          | CEO             | Not Found
+3          | Development     | Not Found
+4          | Finance         | Not Found
+5          | Frontend        | Not Found
+6          | HR              | Not Found
+7          | IT              | Not Found
+8          | Testing         | Found
+
+Total comparisons: 8
+
+
+3. BINARY SEARCH
+
+Search: IT
+
+Step | Low | High | Mid | Element  | Decision
+-----|-----|------|-----|----------|----------------
+1    | 0   | 7    | 3   | Finance  | Search Right
+2    | 4   | 7    | 5   | HR       | Search Right
+3    | 6   | 7    | 6   | IT       | Found
+
+Total comparisons: 3
+
+
+Search: Frontend
+
+Step | Low | High | Mid | Element   | Decision
+-----|-----|------|-----|-----------|----------------
+1    | 0   | 7    | 3   | Finance   | Search Right
+2    | 4   | 7    | 5   | HR        | Search Left
+3    | 4   | 4    | 4   | Frontend  | Found
+
+Total comparisons: 3
+
+
+Search: Testing
+
+Step | Low | High | Mid | Element | Decision
+-----|-----|------|-----|---------|----------------
+1    | 0   | 7    | 3   | Finance | Search Right
+2    | 4   | 7    | 5   | HR      | Search Right
+3    | 6   | 7    | 6   | IT      | Search Right
+4    | 7   | 7    | 7   | Testing | Found
+
+Total comparisons: 4

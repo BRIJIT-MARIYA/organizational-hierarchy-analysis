@@ -1,0 +1,148 @@
+============================================
+       ORGANIZATIONAL HIERARCHY
+============================================
+
+Hierarchy:
+CEO
+|-- HR
+|-- Finance
+|-- IT
+    |-- Development
+        |-- Frontend
+        |-- Backend
+    |-- Testing
+
+LEVEL-ORDER TRAVERSAL TRACE
+------------------------------------------------------------
+Step   Removed Node         Children Added       Output              
+------------------------------------------------------------
+1      CEO                  HR, Finance, IT      CEO                 
+2      HR                                        CEO HR              
+3      Finance                                   CEO HR Finance      
+4      IT                   Development, Testing CEO HR Finance IT   
+5      Development          Frontend, Backend    CEO HR Finance IT Development 
+6      Testing                                   CEO HR Finance IT Development Testing 
+7      Frontend                                  CEO HR Finance IT Development Testing Frontend 
+8      Backend                                   CEO HR Finance IT Development Testing Frontend Backend 
+------------------------------------------------------------
+Final Level-order Traversal:
+CEO HR Finance IT Development Testing Frontend Backend 
+
+
+============================================
+SEARCH 1: IT
+============================================
+
+LINEAR SEARCH TRACE - IT
+-----------------------------------------------
+Step   Element Checked      Result         
+-----------------------------------------------
+1      Backend              Not Found      
+2      CEO                  Not Found      
+3      Development          Not Found      
+4      Finance              Not Found      
+5      Frontend             Not Found      
+6      HR                   Not Found      
+7      IT                   FOUND          
+-----------------------------------------------
+
+BINARY SEARCH TRACE - IT
+------------------------------------------------------------
+Step   Low    High   Mid    Element              Decision            
+------------------------------------------------------------
+1      0      7      3      Finance              Search Right        
+2      4      7      5      HR                   Search Right        
+3      6      7      6      IT                   FOUND               
+------------------------------------------------------------
+
+Comparison Summary:
+Linear Search : 7 comparisons
+Binary Search : 3 comparisons
+
+
+============================================
+SEARCH 2: Frontend
+============================================
+
+LINEAR SEARCH TRACE - Frontend
+-----------------------------------------------
+Step   Element Checked      Result         
+-----------------------------------------------
+1      Backend              Not Found      
+2      CEO                  Not Found      
+3      Development          Not Found      
+4      Finance              Not Found      
+5      Frontend             FOUND          
+-----------------------------------------------
+
+BINARY SEARCH TRACE - Frontend
+------------------------------------------------------------
+Step   Low    High   Mid    Element              Decision            
+------------------------------------------------------------
+1      0      7      3      Finance              Search Right        
+2      4      7      5      HR                   Search Left         
+3      4      4      4      Frontend             FOUND               
+------------------------------------------------------------
+
+Comparison Summary:
+Linear Search : 5 comparisons
+Binary Search : 3 comparisons
+
+
+============================================
+SEARCH 3: Testing
+============================================
+
+LINEAR SEARCH TRACE - Testing
+-----------------------------------------------
+Step   Element Checked      Result         
+-----------------------------------------------
+1      Backend              Not Found      
+2      CEO                  Not Found      
+3      Development          Not Found      
+4      Finance              Not Found      
+5      Frontend             Not Found      
+6      HR                   Not Found      
+7      IT                   Not Found      
+8      Testing              FOUND          
+-----------------------------------------------
+
+BINARY SEARCH TRACE - Testing
+------------------------------------------------------------
+Step   Low    High   Mid    Element              Decision            
+------------------------------------------------------------
+1      0      7      3      Finance              Search Right        
+2      4      7      5      HR                   Search Right        
+3      6      7      6      IT                   Search Right        
+4      7      7      7      Testing              FOUND               
+------------------------------------------------------------
+
+Comparison Summary:
+Linear Search : 8 comparisons
+Binary Search : 4 comparisons
+
+
+============================================
+          COMPLEXITY ANALYSIS
+============================================
+Tree Construction        : O(n)
+Level-order Traversal     : O(n)
+Linear Search             : O(n)
+Binary Search             : O(log n)
+
+Space Complexity:
+Tree                     : O(n)
+Level-order Queue        : O(n)
+Linear Search            : O(1)
+Binary Search            : O(1)
+
+
+============================================
+              CONCLUSION
+============================================
+The general tree is suitable for representing
+the organizational hierarchy.
+Level-order traversal displays the hierarchy
+level by level.
+Binary Search is more efficient than Linear
+Search when department names are sorted.
